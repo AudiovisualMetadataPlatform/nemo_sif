@@ -25,6 +25,24 @@ def main():
     with open(args.outfile, "w") as f:
        yaml.safe_dump(data, f)
 
+    # dump out an SRT
+    with open(args.outfile + ".srt", "w") as f:
+        for i, s in enumerate(data['segments']):
+            print(i, file=f)
+            print(timestamp(s['start']), '-->', timestamp(s['end']), file=f)
+            print(s['segment'], file=f)
+            print(file=f)
+
+
+def timestamp(t):
+    h = int(t / 3600)
+    t = t - h * 3600
+    m = int(t / 60)
+    t = t - m * 60
+    s = int(t)
+    x = int((t - s)*1000)
+    return f"{h:02d}:{m:02d}:{s:02d},{x:03d}"
+    
 
 if __name__ == "__main__":
   main()
