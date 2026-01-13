@@ -28,7 +28,7 @@ def main():
     # dump out an SRT
     with open(args.outfile + ".srt", "w") as f:
         for i, s in enumerate(data['segments']):
-            print(i, file=f)
+            print(i + 1, file=f)
             print(timestamp(s['start']), '-->', timestamp(s['end']), file=f)
             print(s['segment'], file=f)
             print(file=f)
