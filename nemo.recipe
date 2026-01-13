@@ -1,0 +1,6 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/nemo:25.11
+
+%runscript
+#!/bin/bash
+exec python "$@"
