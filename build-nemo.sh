@@ -6,13 +6,13 @@ export TMPDIR=$SCRIPT_DIR/tmp
 
 if [ ! -e $APPTAINER_CACHEDIR ]; then
     echo "Create a directory or symlink called $APPTAINER_CACHEDIR for the apptainer cache"
-    echo "The total space needed may be as large as 25G"
+    echo "The total space needed may be as large as 30G"
     exit 1
 fi
 
 if [ ! -e $TMPDIR ]; then
     echo "Create a directory or symlink called $TMPDIR as a temporary directory"
-    echo "The total space needed may be as large as 100G"
+    echo "The total space needed may be as large as 80G"
     exit 1
 fi
 
